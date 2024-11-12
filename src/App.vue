@@ -1,26 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>Welcome to Club 36 Arcade</div>
+  <!-- <hello-world/> -->
+
+  <main id="app">
+    <section class="games">
+      <div v-for="game in games" :key="game.id" class="game">
+        <div>
+          {{ game.title }} 
+          {{ game.description }} 
+          {{ game.pcUrl }} 
+          {{ game.macUrl }}
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+import axios from "axios"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // HelloWorld
+  },
+  data() {
+    return {
+      games: []
+    }
+  },
+  mounted() {
+    axios
+      .get("http://localhost:8080/api/links")
+      // .then(res => console.log(res.data))
+      .then(res => {this.games = res.data})
+      .catch(err => console.error(err))
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
