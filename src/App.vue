@@ -1,29 +1,19 @@
 <template>
-  <div>Welcome to Club 36 Arcade</div>
-  <!-- <hello-world/> -->
+  <h1>Welcome to Club 36 Arcade</h1>
 
   <main id="app">
-    <section class="games">
-      <div v-for="game in games" :key="game.id" class="game">
-        <div>
-          {{ game.title }} 
-          {{ game.description }} 
-          {{ game.pcUrl }} 
-          {{ game.macUrl }}
-        </div>
-      </div>
-    </section>
+    <GameCards :games="games"/>
   </main>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import axios from "axios"
+import GameCards from "./components/GameCards.vue";
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    GameCards
   },
   data() {
     return {
