@@ -1,14 +1,16 @@
 <template>
-  <h1>Welcome to Club 36 Arcade</h1>
-
   <main id="app">
-    <GameCards :games="games"/>
+    <h1 class="text-center text-7xl font-bold bg-white h-32 flex justify-center items-center text-red-500">Welcome to Club 36 Arcade</h1>
+    <div>
+      <GameCards :games="games"/>
+    </div>
   </main>
 </template>
 
 <script>
 import axios from "axios"
 import GameCards from "./components/GameCards.vue";
+import "./index.css"
 
 export default {
   name: 'App',
