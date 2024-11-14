@@ -1,6 +1,6 @@
-# frontend
+# Polyglottal Frontend
 
-## Project summary
+## Project Summary
 Static front end to host arcade games. 
 
 ## Tech Stack
@@ -8,9 +8,10 @@ Static front end to host arcade games.
 - JavaScript
 - Tailwind
 
-## Project setup
+## Project Setup
 ```
 npm install
+npm run serve
 ```
 
 ## Project Build
