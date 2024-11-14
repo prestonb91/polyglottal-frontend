@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-wrap flex-row p-5 text-2xl">
-    <div v-for="game in games" :key="game.id" class="flex-auto h-3/4 m-10 rounded-t-xl w-56 bg-gray-300">
+  <div class="flex flex-wrap flex-row justify-center p-5 text-2xl">
+    <div v-for="game in games" :key="game.id" class="flex-auto h-3/4 m-10 rounded-t-xl max-w-96 bg-gray-300">
         <div class="text-center font-bold m-5 text-5xl">
           <h2>{{ game.title }}</h2>
         </div>
